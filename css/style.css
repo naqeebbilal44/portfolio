@@ -1,198 +1,83 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: #333;
-}
-
-/* HEADER */
+/* ------------------------------
+   HEADER / NAV — ORIGINAL STYLE
+--------------------------------*/
 .site-header {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
+  background: rgba(15, 20, 35, 0.75);
+  backdrop-filter: blur(14px);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.25);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 2px solid var(--gold);
 }
 
 .site-header .wrap {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.brand h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #000;
-}
-
-.main-nav {
-  display: flex;
-  gap: 25px;
-}
-
 .main-nav a {
-  color: #000;
+  margin-left: 25px;
+  color: var(--white-soft);
   text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  position: relative;
+  transition: var(--transition);
 }
 
 .main-nav a:hover {
-  color: #007bff;
+  color: var(--gold);
 }
 
-/* CONTACT BUTTON */
-.btn-primary {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s ease-in-out;
-  font-size: 16px;
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 3px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+/* REMOVE MOBILE MENU */
+.mobile-menu-icon,
+#menu-toggle {
+  display: none;
 }
 
-/* HERO SECTION */
-.hero {
-  padding: 120px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.hero h1 {
-  font-size: 48px;
-  color: #000;
-}
-
-.hero p {
-  margin-top: 15px;
-  font-size: 20px;
-  color: #444;
-}
-
-.hero .btn-primary {
-  margin-top: 25px;
-}
-
-/* ABOUT SECTION */
-section {
-  padding: 80px 20px;
-}
-
-section h2 {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #000;
-}
-
-section p {
-  max-width: 900px;
-  margin: auto;
-  font-size: 18px;
-  color: #444;
-  text-align: center;
-}
-
-/* PROJECT CARDS */
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.project-card {
-  width: 300px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  background: #fff;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
-}
-
-.project-card h3 {
-  font-size: 24px;
-  color: #000;
-}
-
-.project-card p {
-  font-size: 16px;
-  color: #444;
-  margin-top: 10px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-  font-size: 16px;
-  color: #555;
-}
-
-/* RESPONSIVE — MOBILE LAYOUT FIXED */
+/* Mobile behavior (just center nav, no toggle) */
 @media (max-width: 850px) {
-
   .site-header .wrap {
     flex-direction: column;
     gap: 15px;
-    text-align: center;
-  }
-
-  .brand {
-    text-align: center;
   }
 
   .main-nav {
-    flex-direction: row;
-    gap: 18px;
-    justify-content: center;
+    display: flex;
+    gap: 20px;
   }
 
-  .btn-primary {
-    padding: 10px 22px;
-    font-size: 14px;
-  }
-
-  .projects {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-card {
-    width: 90%;
-    max-width: 350px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero p {
-    font-size: 18px;
+  .main-nav a {
+    margin-left: 0;
+    font-size: 16px;
   }
 }
