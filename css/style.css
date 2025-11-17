@@ -1,199 +1,130 @@
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff;
-  color: #333;
-}
-
-/* HEADER */
+/* ------------------------------
+   HEADER BASE
+--------------------------------*/
 .site-header {
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: #0d0f15;
+  padding: 20px 0;
 }
 
-.site-header .wrap {
+.wrap {
+  width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.subtitle {
+  color: #9da2af;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ------------------------------
+   NAVIGATION DESKTOP
+--------------------------------*/
+.main-nav {
+  display: flex;
+  gap: 20px;
   align-items: center;
 }
 
-.brand h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #000;
-}
-
-.main-nav {
-  display: flex;
-  gap: 25px;
-}
-
 .main-nav a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.main-nav a:hover {
-  color: #007bff;
-}
-
-/* CONTACT BUTTON */
-.btn-primary {
-  display: inline-block;
-  background-color: #007bff;
   color: #fff;
-  padding: 12px 28px;
-  border-radius: 5px;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
   font-size: 16px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* HERO SECTION */
-.hero {
-  padding: 120px 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.hero h1 {
-  font-size: 48px;
+/* Contact button */
+.btn-primary {
+  padding: 10px 20px;
+  background: #f1d27a;
   color: #000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.hero p {
-  margin-top: 15px;
-  font-size: 20px;
-  color: #444;
+/* ------------------------------
+   MOBILE MENU ICON
+--------------------------------*/
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
-.hero .btn-primary {
-  margin-top: 25px;
+#menu-toggle {
+  display: none;
 }
 
-/* ABOUT SECTION */
-section {
-  padding: 80px 20px;
-}
+/* ------------------------------
+   MOBILE RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
 
-section h2 {
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #000;
-}
-
-section p {
-  max-width: 900px;
-  margin: auto;
-  font-size: 18px;
-  color: #444;
-  text-align: center;
-}
-
-/* PROJECT CARDS */
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.project-card {
-  width: 300px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  background: #fff;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
-}
-
-.project-card h3 {
-  font-size: 24px;
-  color: #000;
-}
-
-.project-card p {
-  font-size: 16px;
-  color: #444;
-  margin-top: 10px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  background-color: #fff;
-  border-top: 1px solid #eee;
-  font-size: 16px;
-  color: #555;
-}
-
-/* RESPONSIVE — MOBILE LAYOUT FIXED */
-@media (max-width: 850px) {
-
-  .site-header .wrap {
+  .wrap {
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
 
+  /* Bigger Photo */
+  .brand-photo {
+    width: 90px;
+    height: 90px;
+  }
+
   .brand {
-    text-align: center;
-  }
-
-  .main-nav {
-    flex-direction: row;
-    gap: 18px;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    padding: 10px 22px;
-    font-size: 14px;
-  }
-
-  .projects {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
-  .project-card {
-    width: 90%;
-    max-width: 350px;
+  /* Mobile menu icon visible */
+  .mobile-menu-icon {
+    display: block;
   }
 
-  .hero h1 {
-    font-size: 36px;
+  /* Hide nav by default */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    background: #11141b;
+    padding: 15px 0;
+    border-radius: 10px;
   }
 
-  .hero p {
-    font-size: 18px;
+  /* Show nav when toggled */
+  #menu-toggle:checked ~ .main-nav {
+    display: flex;
+  }
+}
+
+/* ------------------------------
+   EXTRA SMALL PHONES (iPhone SE)
+--------------------------------*/
+@media (max-width: 480px) {
+  .brand-photo {
+    width: 110px;
+    height: 110px;
   }
 }
