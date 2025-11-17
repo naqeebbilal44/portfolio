@@ -1,130 +1,254 @@
 
-/* ------------------------------
-   HEADER BASE
---------------------------------*/
-.site-header {
-  background: #0d0f15;
-  padding: 20px 0;
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Layout Helpers */
 .wrap {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Header */
+.site-header {
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
 }
 
 .brand-photo {
-  width: 70px;
-  height: 70px;
+  width: 85px;        /* Medium size */
+  height: 85px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .subtitle {
-  color: #9da2af;
   font-size: 14px;
-  margin-top: 4px;
+  color: #666;
+  margin-top: 3px;
 }
 
-/* ------------------------------
-   NAVIGATION DESKTOP
---------------------------------*/
+/* Navigation */
 .main-nav {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 25px;
 }
 
 .main-nav a {
-  color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  color: #111;
+  font-weight: 600;
+  transition: 0.2s;
 }
 
-/* Contact button */
+.main-nav a:hover {
+  color: #0077ff;
+}
+
+/* Primary Button */
 .btn-primary {
-  padding: 10px 20px;
-  background: #f1d27a;
-  color: #000;
-  border-radius: 20px;
+  background: #0077ff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.2s;
 }
 
-/* ------------------------------
-   MOBILE MENU ICON
---------------------------------*/
+.btn-primary:hover {
+  background: #005fcc;
+}
+
+/* Ghost Button */
+.btn-ghost {
+  border: 1px solid #0077ff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-ghost:hover {
+  background: #0077ff;
+  color: #fff;
+}
+
+/* Mobile Menu */
 .mobile-menu-icon {
   display: none;
-  font-size: 28px;
-  color: #fff;
+  font-size: 30px;
   cursor: pointer;
-  margin-left: 10px;
+  user-select: none;
 }
 
 #menu-toggle {
   display: none;
 }
 
-/* ------------------------------
-   MOBILE RESPONSIVE
---------------------------------*/
+/* HERO */
+.hero {
+  padding: 50px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+
+.hero-left h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.lead {
+  color: #444;
+  font-size: 17px;
+  margin-bottom: 20px;
+  max-width: 550px;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+/* Right Card */
+.hero-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.muted {
+  color: #666;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 14px;
+}
+
+/* ----------------------- */
+/* RESPONSIVE MOBILE FIXES */
+/* ----------------------- */
+
 @media (max-width: 768px) {
-
+  /* Header layout fix */
   .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: none;
     flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 180px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
     gap: 15px;
-    text-align: center;
   }
 
-  /* Bigger Photo */
-  .brand-photo {
-    width: 90px;
-    height: 90px;
+  /* Show menu when checked */
+  #menu-toggle:checked ~ .main-nav {
+    display: flex;
   }
 
-  .brand {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  /* Mobile menu icon visible */
   .mobile-menu-icon {
     display: block;
   }
 
-  /* Hide nav by default */
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    background: #11141b;
-    padding: 15px 0;
-    border-radius: 10px;
+  /* Better spacing in header */
+  .brand {
+    gap: 10px;
   }
 
-  /* Show nav when toggled */
-  #menu-toggle:checked ~ .main-nav {
-    display: flex;
-  }
-}
-
-/* ------------------------------
-   EXTRA SMALL PHONES (iPhone SE)
---------------------------------*/
-@media (max-width: 480px) {
   .brand-photo {
-    width: 110px;
-    height: 110px;
+    width: 75px;       /* Slightly smaller on mobile */
+    height: 75px;
+  }
+
+  /* Hero becomes single column */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-left h2 {
+    font-size: 28px;
+  }
+
+  .hero-image {
+    height: 160px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-ghost {
+    text-align: center;
+    width: 100%;
   }
 }
