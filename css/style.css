@@ -1,84 +1,198 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Mafooz Ilahi — Award-winning Real Estate Advisor. Senior Sales Director at BNW Developments, Dubai." />
-  <title>Mafooz Ilahi | Real Estate Advisor — BNW Developments</title>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333;
+}
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
+/* HEADER */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-<body>
+.site-header .wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="wrap">
-      <div class="brand">
-        <img src="assets/images/profile.jpg" alt="Mafooz Ilahi" class="brand-photo">
-        <div>
-          <h1>Mafooz Ilahi</h1>
-          <p class="subtitle">Award-winning Real Estate Advisor • Senior Sales Director, BNW Developments (Dubai)</p>
-        </div>
-      </div>
+.brand h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
 
-      <!-- CLEAN MENU (NO TOGGLE) -->
-      <nav class="main-nav">
-        <a href="about.html">About</a>
-        <a href="listings.html">Listings</a>
-        <a href="contact.html" class="btn-primary">Contact</a>
-      </nav>
-    </div>
-  </header>
+.main-nav {
+  display: flex;
+  gap: 25px;
+}
 
-  <!-- Hero Section -->
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-left">
-          <h2>Premium properties. Trusted guidance.</h2>
-          <p class="lead">
-            With over a decade in Dubai real estate and experience across top developers and banking,
-            Mafooz helps clients buy, sell and invest with confidence. Off work, he enjoys cricket and strategic
-            market study.
-          </p>
+.main-nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
 
-          <div class="actions">
-            <a href="contact.html" class="btn-primary">Request a Consultation</a>
-            <a href="listings.html" class="btn-ghost">View Listings</a>
-          </div>
-        </div>
+.main-nav a:hover {
+  color: #007bff;
+}
 
-        <aside class="hero-card">
-          <img src="assets/images/hero.jpg" alt="Premium property" class="hero-image">
+/* CONTACT BUTTON */
+.btn-primary {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+}
 
-          <div class="card-body">
-            <h3>Senior Sales Director — BNW Developments</h3>
-            <p class="muted">Dubai, UAE</p>
-            <p class="muted small">Available for residential & commercial advisory.</p>
+.btn-primary:hover {
+  background-color: #0056b3;
+}
 
-            <div class="contact-row">
-              <a href="tel:+971501234567" class="btn-ghost">Call</a>
-              <a href="https://wa.me/971501234567?text=Hello%20Mafooz" class="btn-primary" target="_blank">WhatsApp</a>
-            </div>
-          </div>
-        </aside>
+/* HERO SECTION */
+.hero {
+  padding: 120px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
 
-      </div>
-    </section>
-  </main>
+.hero h1 {
+  font-size: 48px;
+  color: #000;
+}
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap center">
-      <div>© <span id="year"></span> Mafooz Ilahi — Real Estate Advisor</div>
-    </div>
-  </footer>
+.hero p {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #444;
+}
 
-  <script src="js/app.js"></script>
-</body>
-</html>
+.hero .btn-primary {
+  margin-top: 25px;
+}
+
+/* ABOUT SECTION */
+section {
+  padding: 80px 20px;
+}
+
+section h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+section p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+}
+
+/* PROJECT CARDS */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.project-card {
+  width: 300px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.project-card h3 {
+  font-size: 24px;
+  color: #000;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  font-size: 16px;
+  color: #555;
+}
+
+/* RESPONSIVE — MOBILE LAYOUT FIXED */
+@media (max-width: 850px) {
+
+  .site-header .wrap {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .main-nav {
+    flex-direction: row;
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}
