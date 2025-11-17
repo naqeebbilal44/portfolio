@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6e27a"/>
+      <stop offset="100%" stop-color="#d4a840"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon -->
+  <rect x="10" y="10" width="60" height="60" rx="5" fill="url(#gold)"/>
+  <path d="M25 55 L40 25 L55 55 Z" fill="white"/>
+
+  <!-- Text -->
+  <text x="85" y="52" font-family="Georgia" font-size="36" fill="#d4a840" font-weight="700">
+    SOBHA
+  </text>
+</svg>
+

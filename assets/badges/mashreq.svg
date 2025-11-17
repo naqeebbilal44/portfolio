@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90">
+  <defs>
+    <linearGradient id="sunGradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ff7e00"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="45" cy="45" r="30" fill="url(#sunGradient)"/>
+  <path d="M45 20 L52 40 L45 60 L38 40 Z" fill="white"/>
+
+  <text x="95" y="55" font-family="Verdana" font-size="34" fill="#ff7e00">
+    MASHREQ
+  </text>
+</svg>
