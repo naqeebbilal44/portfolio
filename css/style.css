@@ -284,3 +284,45 @@ body {
     display: flex;
   }
 }
+/* MOBILE MENU ICON */
+.mobile-menu-icon {
+  display: none;
+  font-size: 32px;
+  color: var(--white-soft);
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 850px) {
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    background: var(--blue-card);
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    flex-direction: column;
+  }
+
+  #menu-toggle:checked ~ .main-nav {
+    display: flex;
+  }
+
+  .main-nav a {
+    margin: 12px 0;
+    display: block;
+  }
+}
