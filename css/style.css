@@ -279,7 +279,8 @@ body {
     text-align: center;
   }
 
+  /* KEEP NAVBAR VISIBLE */
   .main-nav {
-    display: none;
+    display: flex;
   }
 }
